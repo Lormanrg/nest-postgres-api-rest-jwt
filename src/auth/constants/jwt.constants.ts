@@ -1,3 +1,4 @@
+console.log(process.env.JTW_SECRET);
 export const jwtConstants = {
-  secret: 'no utilizar esta palabra en producción',
+  secret: process.env.JTW_SECRET,
 };
