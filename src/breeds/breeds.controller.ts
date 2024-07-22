@@ -14,8 +14,11 @@ import { Auth } from 'src/auth/decorators/auth.decorators';
 import { Role } from 'src/common/enums/rol.enum';
 import { UserActiveInterface } from '../common/interfaces/user-active.interface';
 import { ActiveUser } from 'src/common/decorators/active-user.decorators';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
-@Auth(Role.ADMIN)
+@ApiTags('breeds')
+@ApiBearerAuth()
+@Auth(Role.USER)
 @Controller('breeds')
 export class BreedsController {
   constructor(private readonly breedsService: BreedsService) {}
